@@ -5,6 +5,7 @@
 
 @import "tailwindcss";
 
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -392,6 +393,22 @@ left: -3px;
     /* border: 1px solid; */
     width: 30%;
 }
+
+.login{
+    background-image: url("/public/car1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signup{
+    background-image: url("/public/car3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 
 
 

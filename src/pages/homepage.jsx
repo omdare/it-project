@@ -1,21 +1,26 @@
-import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedinIn, FaPinterest, FaSearch } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaBars, FaFacebook, FaInstagram, FaLinkedinIn, FaPinterest, FaSearch } from "react-icons/fa";
 import { MdOutlineMenu, MdSearch } from "react-icons/md";
 import { Link } from "react-router-dom";
 import CarCard from "../components/card";
 import tesla from '../assets/tesla.png'
 import logo from '../assets/logo.webp'
 import tesla_image from '../assets/tesla.jpg'
+import {IoClose} from "react-icons/io5"
 
 
 const Homepage = () => {
+  const [menuOpen, setMenuOpen]= useState(false)
+  const toggleMenu=()=>{
+    setMenuOpen(prev => !prev)
+  }
   return (
     <>
       <nav className="bg-slate-50 ">
         <div className="flex justify-between items-center p-3">
           <div className="flex items-center">
             <img
-              src="/logo.webp"
+              src="/assets/logo.webp"
               alt=""
               width={50}
               className="font-bold"
@@ -33,9 +38,22 @@ const Homepage = () => {
 
           <div className="flex items-center gap-3 text-xl">
             <FaSearch />
-            <MdOutlineMenu />
+            <div onclick={toggleMenu} className="w-7 h-5 relative text-white z-40 md:hidden">
+                 { menuOpen ? <IoClose size={24}/> : <FaBars size={20}/>} 
+            </div>
+            
           </div>
         </div>
+        { menuOpen &&(
+          <div className="md:hidden">
+            <a onclick={toggleMenu} href="">All Cars</a>
+             <a onclick={toggleMenu} href="">All Cars</a>
+               <a onclick={toggleMenu} href="">All Cars</a>
+              <a onclick={toggleMenu} href="">All Cars</a>
+                <a onclick={toggleMenu} href="">All Cars</a>
+          </div>
+
+        )}
       </nav>
 
       <div className="hero_wrap">
