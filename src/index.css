@@ -15,6 +15,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Interior Design Color Palette */
+  --color-beige: #F5F1EB;
+  --color-cream: #FDF8F3;
+  --color-light-brown: #D4B896;
+  --color-pastel-blue: #B8D4E3;
+  --color-muted-pink: #E8D5D3;
+  --color-warm-white: #FEFCFA;
+  --color-soft-gray: #E5E1DC;
+  --color-dark-brown: #8B6F47;
+  --color-accent-blue: #9BC4D9;
+  --color-accent-pink: #DCC5C3;
+
+  /* Shadows and Effects */
+  --shadow-soft: 0 4px 20px rgba(212, 184, 150, 0.15);
+  --shadow-medium: 0 8px 30px rgba(212, 184, 150, 0.2);
+  --shadow-large: 0 12px 40px rgba(212, 184, 150, 0.25);
+
+  /* Border Radius */
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  --radius-xl: 32px;
 }
 
 .playwrite{
@@ -35,6 +58,64 @@
   font-style: normal;
 }
 
+/* Base Interior Design Styles */
+body {
+  background-color: var(--color-warm-white);
+  color: var(--color-dark-brown);
+}
+
+.organic-shape {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-cream) 100%);
+}
+
+.soft-shadow {
+  box-shadow: var(--shadow-soft);
+}
+
+.medium-shadow {
+  box-shadow: var(--shadow-medium);
+}
+
+.large-shadow {
+  box-shadow: var(--shadow-large);
+}
+
+.rounded-organic {
+  border-radius: var(--radius-large);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-light-brown) 0%, var(--color-dark-brown) 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-medium);
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+  background: var(--color-cream);
+  color: var(--color-dark-brown);
+  border: 2px solid var(--color-light-brown);
+  padding: 12px 24px;
+  border-radius: var(--radius-medium);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-light-brown);
+  color: white;
+}
+
 
 
 .hero {
@@ -44,10 +125,10 @@
     justify-content: center;
     position: relative;
     z-index: 1;
-    background-color: #fff;
-    padding-bottom: rem;
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-beige) 100%);
+    padding-bottom: 6rem;
     padding-top: 4rem;
-   box-shadow: 0 10rem 7rem 1rem white;
+    min-height: 80vh;
 }
 .hero .info {
     margin-bottom: 3rem;
